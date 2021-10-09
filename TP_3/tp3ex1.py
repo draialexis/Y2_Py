@@ -1,4 +1,4 @@
-#1)
+# 1)
 
 def code_une(lt):
     switcher = {
@@ -31,11 +31,14 @@ def code_une(lt):
     }
     return switcher.get(lt, "entrez seulement des lettres majuscules sans accent.")
 
+
 str = "CESAR"
 for lt in str:
     print(code_une(lt))
 print('\n')
-#2)
+
+
+# 2)
 
 def decode_une(c):
     switcher = {
@@ -67,6 +70,7 @@ def decode_une(c):
         25: 'Z',
     }
     return switcher.get(c, "entrez seulement des chiffresentre 0 et 25.")
+
 
 code = [2, 4, 18, 0, 17]
 for c in code:

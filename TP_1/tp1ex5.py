@@ -10,9 +10,10 @@ def div35(n):
         i += 1
     return sol
 
+
 print('div35(10) =', div35(10))
 print('div35(45) =', div35(45))
 print('div35(1000) =', div35(1000))
 print('div35(2000) + div35(3000) =', div35(2000) + div35(3000))
 
-#div35(2000) + div35(3000) = 3_030_168
+# div35(2000) + div35(3000) = 3_030_168
