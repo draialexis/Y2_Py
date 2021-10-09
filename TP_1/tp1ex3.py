@@ -30,16 +30,16 @@ print('sol2_7 =', sol2_7)
 
 # 3)
 
-def intPartSize(x):
+def int_part_size(x):
     sol = int(np.log10(x) + 1)
     return sol
 
 
-sol3_1 = intPartSize(2)
+sol3_1 = int_part_size(2)
 print('sol3_1 =', sol3_1)
-sol3_2 = intPartSize(25)
+sol3_2 = int_part_size(25)
 print('sol3_2 =', sol3_2)
-sol3_3 = intPartSize(2566)
+sol3_3 = int_part_size(2566)
 print('sol3_3 =', sol3_3)
-sol3_4 = intPartSize(pow(2, 64) - 1)
+sol3_4 = int_part_size(pow(2, 64) - 1)
 print('sol3_4 =', sol3_4)
