@@ -25,27 +25,32 @@ def fibo_liste(n):
 
 
 num1 = 20
-print('fibo_liste(', num1, ') =', fibo_liste(num1))
+#print('fibo_liste(', num1, ') =', fibo_liste(num1))
 #fibo_liste(num1)
 
 #3)
 
-def fibo_weird(n):
+def fibo_weird(n, mod):
+    n_2 = 0
+    n_1 = 1
+    sum = 0
     fib = 0
-    res = 0
     if n < 0:
         print('oh no no no')
         return -1
         quit()
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        fib += (fibo(n - 1) + fibo(n - 2))
+    if n == 0 or n == 1:
+        return n
+    for i in range (2, n+1):
+        fib = n_2 + n_1
+        #print('fib =', fib)
         if fib % 2 == 0:
-            res += fib
+            sum += fib
+            #print('sum =', sum)
+        n_2 = n_1
+        n_1 = fib
 
-    return res
+    return sum % mod
 
-print('fibo_weird(', 100000, ') =', fibo_weird(num1))
+#print('fibo_weird(', 100000, ') =', fibo_weird(100000, 10000007))
+#prints out "2676110"
