@@ -1,6 +1,5 @@
 from TP_2 import tp2ex5 as p
 import tp3ex1 as prv
-import tp3ex2 as prv2
 
 A = [0,
      1,
@@ -68,7 +67,58 @@ def affine(string, a, b):
     return res
 
 
-my_string = 'KILL ME NOW'
-print(affine(my_string, 25, 7))
+# my_string = 'KILL ME NOW'
+# print(affine(my_string, 25, 7))
+
 
 # 3)
+
+# print(1 % 26)
+# 1 % 26 is a constant : 1
+# a' * a = 1 => a' = 1 / a
+
+# a' * a = 1 (mod 26)
+# that's just asking "what a' * a will give you 1 when it's mod 26
+# a' * a % 26 = 1
+
+# a' = x
+# a = 17
+# %43 = %26
+
+def gcd(a, b):
+    if a < b:
+        a, b = b, a
+    while b != 0:
+        r = a % b
+        a = b
+        b = r
+    return a
+
+
+my_a = gcd(43, 17)
+my_b = gcd(17, 43)
+
+# if gcd == 1...
+
+
+# def modinv(a, m):
+#     g, x, y = pgcd(a, m)
+#     if g != 1:
+#         print('modular inverse does not exist')
+#         return
+#     else:
+#         return x % m
+
+
+# print(modinv(17, 43))
+
+
+# def xgcd(a, b):
+#     prevx, x = 1, 0
+#     prevy, y = 0, 1
+#     while b:
+#         q = a / b
+#         x, prevx = prevx - q * x, x
+#         y, prevy = prevy - q * y, y
+#         a, b = b, a % b
+#     return a, prevx, prevy
