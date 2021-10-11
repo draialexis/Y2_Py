@@ -73,52 +73,22 @@ def affine(string, a, b):
 
 # 3)
 
-# print(1 % 26)
-# 1 % 26 is a constant : 1
-# a' * a = 1 => a' = 1 / a
-
-# a' * a = 1 (mod 26)
-# that's just asking "what a' * a will give you 1 when it's mod 26
-# a' * a % 26 = 1
-
-# a' = x
-# a = 17
-# %43 = %26
-
-def gcd(a, b):
-    if a < b:
-        a, b = b, a
-    while b != 0:
-        r = a % b
-        a = b
-        b = r
-    return a
+cst = 26
 
 
-my_a = gcd(43, 17)
-my_b = gcd(17, 43)
-
-# if gcd == 1...
-
-
-# def modinv(a, m):
-#     g, x, y = pgcd(a, m)
-#     if g != 1:
-#         print('modular inverse does not exist')
-#         return
-#     else:
-#         return x % m
+def inverse(a):
+    for i in range(1, cst):
+        a_m = a % cst
+        i_m = i % cst
+        a_i_m = a_m * i_m % cst
+        if a_i_m == 1:
+            return i
+    return 0
 
 
-# print(modinv(17, 43))
-
-
-# def xgcd(a, b):
-#     prevx, x = 1, 0
-#     prevy, y = 0, 1
-#     while b:
-#         q = a / b
-#         x, prevx = prevx - q * x, x
-#         y, prevy = prevy - q * y, y
-#         a, b = b, a % b
-#     return a, prevx, prevy
+for x in range(1, cst):
+    inv = inverse(x)
+    if inv == 0:
+        print('cannot find an "inverse modulo 26" for', x)
+    else:
+        print(x, '*', inv, '%', cst, '=', 1)
