@@ -28,6 +28,7 @@ def code_une(lt):
         'X': 23,
         'Y': 24,
         'Z': 25,
+        ' ': ' ',
     }
     return switcher.get(lt, '#')
 
@@ -68,6 +69,7 @@ def decode_une(c):
         23: 'X',
         24: 'Y',
         25: 'Z',
+        ' ': ' ',
     }
     return switcher.get(c, '#')
 
@@ -80,8 +82,8 @@ def decode_une(c):
 
 # 3)
 
-def code_mot(word):
-    char_list = list(word)
+def code_str(str_p):
+    char_list = list(str_p)
     res = list(map(code_une, char_list))
     return res
 
@@ -89,7 +91,7 @@ def code_mot(word):
 # my_word = 'PYTHON'
 
 
-def decode_mot(code):
+def decode(code):
     char_list = list(map(decode_une, code))
     res = "".join(char_list)
     return res
