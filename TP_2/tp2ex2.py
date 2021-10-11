@@ -9,7 +9,7 @@ print('v1 =', v)
 prev = v
 n = 2  # (!) n >= 2
 
-while (not n > 40):
+while not n > 40:
     v = (1 / (n - 1)) - (a * prev)
     prev = v
     print('at n =', n, ', v =', v)
@@ -29,7 +29,7 @@ print('v60 =', v)
 prev = v
 n = 60
 
-while (not n < 40):
+while not n < 40:
     v = - (prev - (1 / (n - 1)) / a)
     prev = v
     print('at n =', n, ', v =', v)

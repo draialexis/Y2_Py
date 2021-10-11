@@ -6,7 +6,7 @@ n = 0
 x = 0.23
 prev = x
 
-while (not n > 60):
+while not n > 60:
     x = 4 * prev * (1 - prev)
     prev = x
     if n == 10 or n == 60:
@@ -20,7 +20,7 @@ n = 0
 x = 0.23
 prev = x
 
-while (not n > 60):
+while not n > 60:
     x = (4 * prev) - (4 * prev * prev)
     prev = x
     if n == 10 or n == 60:
