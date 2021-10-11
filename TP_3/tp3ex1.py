@@ -29,13 +29,13 @@ def code_une(lt):
         'Y': 24,
         'Z': 25,
     }
-    return switcher.get(lt, "entrez seulement des lettres majuscules sans accent.")
+    return switcher.get(lt, ' ')
 
 
-str = "CESAR"
-for lt in str:
-    print(code_une(lt))
-print('\n')
+#str = "CESAR"
+#for lt in str:
+#    print(code_une(lt))
+#print('\n')
 
 
 # 2)
@@ -69,9 +69,31 @@ def decode_une(c):
         24: 'Y',
         25: 'Z',
     }
-    return switcher.get(c, "entrez seulement des chiffresentre 0 et 25.")
+    return switcher.get(c, ' ')
 
 
-code = [2, 4, 18, 0, 17]
-for c in code:
-    print(decode_une(c))
+#code = [2, 4, 18, 0, 17]
+#for c in code:
+#    print(decode_une(c))
+#print('\n')
+
+# 3)
+
+def code_mot(mot):
+    char_list = list(mot)
+    res = list(map(code_une, char_list))
+    return res
+
+mot = 'HELLO WORLD'
+
+
+def decode_mot(code):
+    char_list = list(map(decode_une, code))
+    res = "".join(char_list)
+    return res
+
+
+code = code_mot(mot)
+print(mot, '\n->')
+print(code_mot(mot), '\n->')
+print(decode_mot(code), '\n')
