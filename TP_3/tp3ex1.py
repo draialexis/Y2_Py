@@ -29,13 +29,13 @@ def code_une(lt):
         'Y': 24,
         'Z': 25,
     }
-    return switcher.get(lt, ' ')
+    return switcher.get(lt, '#')
 
 
-#str = "CESAR"
-#for lt in str:
+# str = "CESAR"
+# for lt in str:
 #    print(code_une(lt))
-#print('\n')
+# print('\n')
 
 
 # 2)
@@ -69,22 +69,24 @@ def decode_une(c):
         24: 'Y',
         25: 'Z',
     }
-    return switcher.get(c, ' ')
+    return switcher.get(c, '#')
 
 
-#code = [2, 4, 18, 0, 17]
-#for c in code:
-#    print(decode_une(c))
-#print('\n')
+# my_code = [2, 4, 18, 0, 17]
+# for c in my_code:
+#     print(decode_une(c))
+# print('\n')
+
 
 # 3)
 
-def code_mot(mot):
-    char_list = list(mot)
+def code_mot(word):
+    char_list = list(word)
     res = list(map(code_une, char_list))
     return res
 
-mot = 'HELLO WORLD'
+
+# my_word = 'PYTHON'
 
 
 def decode_mot(code):
@@ -93,7 +95,7 @@ def decode_mot(code):
     return res
 
 
-code = code_mot(mot)
-print(mot, '\n->')
-print(code_mot(mot), '\n->')
-print(decode_mot(code), '\n')
+# my_code = code_mot(my_word)
+# print(my_word, '\n->')
+# print(code_mot(my_word), '\n->')
+# print(decode_mot(my_code), '\n')
