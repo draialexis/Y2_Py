@@ -44,7 +44,9 @@ def cesar(string, d, is_decypher):
     return res
 
 
-my_str = 'THAT WAS ROUGH'
+# 3)
+
+my_str = 'CE MESSAGE EST CONFIDENTIEL'
 delta = -11
 print(my_str, '| delta =', delta)
 
@@ -52,3 +54,11 @@ encyphered = cesar(my_str, delta, 0)
 print(encyphered)
 decyphered = cesar(encyphered, delta, 1)
 print(decyphered)
+
+# 4)
+
+test = 'KYV RIK FW GIFXIRDDZEX ZJ KYV RIK FW FIXREZQZEX TFDGCVOZKP'
+for i in range(1, 27):
+    print('i =', i, '|', cesar(test, i, 1))
+    # i = 17 | THE ART OF PROGRAMMING IS THE ART OF ORGANIZING COMPLEXITY
+    # (E. W. Dijkstra)

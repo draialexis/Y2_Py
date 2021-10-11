@@ -94,7 +94,6 @@ def decode_mot(code):
     res = "".join(char_list)
     return res
 
-
 # my_code = code_mot(my_word)
 # print(my_word, '\n->')
 # print(code_mot(my_word), '\n->')
