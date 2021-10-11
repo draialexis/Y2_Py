@@ -1,4 +1,6 @@
 from TP_2 import tp2ex5 as p
+import tp3ex1 as prv
+import tp3ex2 as prv2
 
 A = [0,
      1,
@@ -27,14 +29,46 @@ A = [0,
      24,
      25]
 
+
 # "Supposons que 'a' est premier avec 26" -> pgcd(a, 26) = 1
 
 # 1)
 
-for i in A:
-    res = p.pgcd(i, 26)
-    if res == 1:
-        print(i, 'is coprime with 26')
+# for i in A:
+#     res = p.pgcd(i, 26)
+#     if res == 1:
+#         print(i, 'is coprime with 26')
+
 
 # 2)
+# au lieu d'appliquer un decalage d a chaque lettre
+# codee f(n) = n+d % 26 (n € [0; 25]),
+# on applique une fonction affine
+# f(n) = an+b % 26
+# (pour une valeur admissible de a).
 
+def affine(string, a, b):
+    nums = prv.encode(string)
+    if not p.pgcd(a, 26) == 1:
+        print(p.pgcd(a, 26))
+        print("'a' € [0, 25] must be coprime with 26")
+        for i in A:
+            res = p.pgcd(i, 26)
+            if res == 1:
+                print(i, 'is coprime with 26')
+
+    nums_delta = []
+    for num in nums:
+        if isinstance(num, int):
+            nums_delta.append((a * num + b) % 26)
+        elif num == ' ':
+            nums_delta.append(num)
+
+    res = prv.decode(nums_delta)
+    return res
+
+
+my_string = 'KILL ME NOW'
+print(affine(my_string, 25, 7))
+
+# 3)
