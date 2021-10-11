@@ -58,7 +58,11 @@ print(decyphered)
 # 4)
 
 test = 'KYV RIK FW GIFXIRDDZEX ZJ KYV RIK FW FIXREZQZEX TFDGCVOZKP'
-for i in range(1, 27):
-    print('i =', i, '|', cesar(test, i, 1))
+for i in range(1, 26):
+    candidate = cesar(test, i, 1)
+    result = candidate.find('THE')
+    if result >= 0:
+        print('i =', i, '|', candidate)
+
     # i = 17 | THE ART OF PROGRAMMING IS THE ART OF ORGANIZING COMPLEXITY
     # (E. W. Dijkstra)
