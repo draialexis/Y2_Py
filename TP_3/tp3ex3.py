@@ -125,8 +125,9 @@ def affine(string, a, b):
     nums_delta = []
     for num in nums:
         if isinstance(num, int):
-            print(num)
-            print((a * num + b) % 26)
+            #print('num:', num)
+            #print('alpha:', (a * num + b))
+            #print('alpha modulo 26:', (a * num + b) % 26)
             nums_delta.append((a * num + b) % 26)
         elif num == ' ':
             nums_delta.append(num)
@@ -134,11 +135,12 @@ def affine(string, a, b):
     return decode(nums_delta)
 
 
-my_string = 'P'
-my_a = 2
-my_b = 1
+my_string = 'CONFIDENTIEL'
+my_a = 5
+my_b = 7
 my_enc_string = affine(my_string, my_a, my_b)
-print(my_enc_string)
+print('str:', my_string)
+print('enc_str:', my_enc_string)
 
 
 # 3)
@@ -150,10 +152,9 @@ def inverse(a):
     for i in range(1, cst):
         a_m = a % cst
         i_m = i % cst
-        if a_m != i_m:
-            a_i_m = a_m * i_m % cst
-            if a_i_m == 1:
-                return i
+        a_i_m = a_m * i_m % cst
+        if a_i_m == 1:
+            return i
     return 0
 
 
@@ -167,15 +168,18 @@ def inverse(a):
 
 # 4)
 
-print("inverse of 5:", inverse(5))
-
 def de_affine(string, a, b):
     nums = encode(string)
     nums_delta = []
     for num in nums:
         if isinstance(num, int):
-            print(((num - b)/a) % 26)
-            nums_delta.append(((num - b)/a) % 26)
+            #print('num:', num)
+            #print('num-b:', num-b)
+            #print('(num-b)*inverse(a):', (num-b)*inverse(a))
+            #print('((num-b)*inverse(a))%26:', ((num-b)*inverse(a))%26)
+
+
+            nums_delta.append(((num-b)*inverse(a))%26)
         elif num == ' ':
             nums_delta.append(num)
 
@@ -183,9 +187,14 @@ def de_affine(string, a, b):
 
 my_dec_string = de_affine(my_enc_string, my_a, my_b)
 
-print(my_dec_string)
+print('dec_str:', my_dec_string)
 
 
+#for i in [1, 3, 5, 7, 9]: #we choose these 'a's in [1, 9[ because even numbers don't have an inverse mod 26
+    #for j in range(1, 10):
+        #print('dec_kybix (i=', i, 'j=', j, '):', de_affine('KYBIX', i, j))
+#dec_kybix (i= 9 j= 1 ): BRAVO
 
-
-
+for i in range(1, 27):
+    print('b=', i, ':', de_affine('LP NVP UJVR YCJAVXRJUR L PRG AP QH LJFYCPIPURXJU', 15, i))
+    #b= 7 : CE QUE NOUS PRODUISONS C EST DE LA COMPREHENSION
