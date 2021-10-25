@@ -1,5 +1,79 @@
-from TP_2 import tp2ex5 as p
-import tp3ex1 as prv
+def p(a, b):
+    while b != 0:
+        r = a % b
+        a = b
+        b = r
+    return a
+
+def code_une(lt):
+    switcher = {
+        'A': 0,
+        'B': 1,
+        'C': 2,
+        'D': 3,
+        'E': 4,
+        'F': 5,
+        'G': 6,
+        'H': 7,
+        'I': 8,
+        'J': 9,
+        'K': 10,
+        'L': 11,
+        'M': 12,
+        'N': 13,
+        'O': 14,
+        'P': 15,
+        'Q': 16,
+        'R': 17,
+        'S': 18,
+        'T': 19,
+        'U': 20,
+        'V': 21,
+        'W': 22,
+        'X': 23,
+        'Y': 24,
+        'Z': 25,
+        ' ': ' ',
+    }
+    return switcher.get(lt, '#')
+
+def decode_une(c):
+    switcher = {
+        0: 'A',
+        1: 'B',
+        2: 'C',
+        3: 'D',
+        4: 'E',
+        5: 'F',
+        6: 'G',
+        7: 'H',
+        8: 'I',
+        9: 'J',
+        10: 'K',
+        11: 'L',
+        12: 'M',
+        13: 'N',
+        14: 'O',
+        15: 'P',
+        16: 'Q',
+        17: 'R',
+        18: 'S',
+        19: 'T',
+        20: 'U',
+        21: 'V',
+        22: 'W',
+        23: 'X',
+        24: 'Y',
+        25: 'Z',
+        ' ': ' ',
+    }
+    return switcher.get(c, '#')
+
+def encode(str_p):
+    return map(code_une, str_p)
+
+def decode(code):
+    return "".join(map(decode_une, code))
 
 A = [0,
      1,
@@ -29,14 +103,14 @@ A = [0,
      25]
 
 
-# "Supposons que 'a' est premier avec 26" -> pgcd(a, 26) = 1
+# "Supposons que 'a' est premier avec 26" -> p(a, 26) = 1
 
 # 1)
 
-# for i in A:
-#     res = p.pgcd(i, 26)
-#     if res == 1:
-#         print(i, 'is coprime with 26')
+#for i in A:
+#    res = p(i, 26)
+#    if res == 1:
+#        print(i, 'is coprime with 26')
 
 
 # 2)
@@ -47,28 +121,24 @@ A = [0,
 # (pour une valeur admissible de a).
 
 def affine(string, a, b):
-    nums = prv.encode(string)
-    if not p.pgcd(a, 26) == 1:
-        print(p.pgcd(a, 26))
-        print("'a' € [0, 25] must be coprime with 26")
-        for i in A:
-            res = p.pgcd(i, 26)
-            if res == 1:
-                print(i, 'is coprime with 26')
-
+    nums = encode(string)
     nums_delta = []
     for num in nums:
         if isinstance(num, int):
+            print(num)
+            print((a * num + b) % 26)
             nums_delta.append((a * num + b) % 26)
         elif num == ' ':
             nums_delta.append(num)
 
-    res = prv.decode(nums_delta)
-    return res
+    return decode(nums_delta)
 
 
-# my_string = 'KILL ME NOW'
-# print(affine(my_string, 25, 7))
+my_string = 'P'
+my_a = 2
+my_b = 1
+my_enc_string = affine(my_string, my_a, my_b)
+print(my_enc_string)
 
 
 # 3)
@@ -80,15 +150,42 @@ def inverse(a):
     for i in range(1, cst):
         a_m = a % cst
         i_m = i % cst
-        a_i_m = a_m * i_m % cst
-        if a_i_m == 1:
-            return i
+        if a_m != i_m:
+            a_i_m = a_m * i_m % cst
+            if a_i_m == 1:
+                return i
     return 0
 
 
-for x in range(1, cst):
-    inv = inverse(x)
-    if inv == 0:
-        print('cannot find an "inverse modulo 26" for', x)
-    else:
-        print(x, '*', inv, '%', cst, '=', 1)
+#for x in range(1, cst+1):
+#    inv = inverse(x)
+#    if inv == 0:
+#        print('cannot find an "inverse modulo 26" for', x)
+#    else:
+#        print(x, '*', inv, '%', cst, '=', 1)
+
+
+# 4)
+
+print("inverse of 5:", inverse(5))
+
+def de_affine(string, a, b):
+    nums = encode(string)
+    nums_delta = []
+    for num in nums:
+        if isinstance(num, int):
+            print(((num - b)/a) % 26)
+            nums_delta.append(((num - b)/a) % 26)
+        elif num == ' ':
+            nums_delta.append(num)
+
+    return decode(nums_delta)
+
+my_dec_string = de_affine(my_enc_string, my_a, my_b)
+
+print(my_dec_string)
+
+
+
+
+
