@@ -64,11 +64,9 @@ for i in range(25, 36):
         print('\nratio of', (((dur / dur_prev)*100)//1)/100, 'between two consecutive values of n\n')
     dur_prev = dur
 
-# we notice that if fibo_r(n) takes 1*t time to execute, fibo_r(n + 1) will take 1.5~1.7*t time to execute
+# we notice that if fibo_r(n) takes t time to execute, fibo_r(n + 1) will take 1.5~1.7*t time to execute
 # WHICH LOOKS A LOT LIKE THE GOLDEN RATIO OHMMMMAGGGGAAAAHD
-# seems like t = t_prev + t_prec_prev
-
-# 3)
+# seems like t = t_prev + t_prev_prev
 
 # 0.6 (t(0))
 
