@@ -18,7 +18,6 @@ def cesar(string, d, is_decypher):
     res = prv.decode(nums_delta)
     return res
 
-
 # 3)
 
 # my_str = 'CE MESSAGE EST CONFIDENTIEL'
@@ -39,5 +38,5 @@ def cesar(string, d, is_decypher):
 #     if result >= 0:
 #         print('i =', i, '|', candidate)
 
-    # i = 17 | THE ART OF PROGRAMMING IS THE ART OF ORGANIZING COMPLEXITY
-    # (E. W. Dijkstra)
+# i = 17 | THE ART OF PROGRAMMING IS THE ART OF ORGANIZING COMPLEXITY
+# (E. W. Dijkstra)

@@ -11,13 +11,16 @@ def harmonique(n):
         return 0.0
     return (harmonique(n - 1) + (1 / n))
 
+
 print('u(100) =', harmonique(100))
 print('u(950) =', harmonique(950))
-#print('u(1010) =', harmonique(1010)) #recursion depth > 1000 (~max)
+
+
+# print('u(1010) =', harmonique(1010)) #recursion depth > 1000 (~max)
 
 # this doesn't work and I don't know why
 #
-#def harmonique_imp(n):
+# def harmonique_imp(n):
 #    if n < 0:
 #        print("that's not even a thing!'")
 #        return -1
@@ -34,9 +37,9 @@ print('u(950) =', harmonique(950))
 #        prev = res
 #    return res
 #
-#print('u(100) =', harmonique_imp(100))
-#print('u(950) =', harmonique_imp(950))
-#print('u(1010) =', harmonique_imp(1010))
+# print('u(100) =', harmonique_imp(100))
+# print('u(950) =', harmonique_imp(950))
+# print('u(1010) =', harmonique_imp(1010))
 
 # 2)
 
@@ -50,18 +53,19 @@ def fibo_r(n):
         return n
     return (fibo_r(n - 1) + fibo_r(n - 2))
 
+
 dur_prev = 0
 for i in range(25, 36):
-    t_start= time()
+    t_start = time()
     fibo_r(i)
     t_fin = time()
     dur = t_fin - t_start
-    print('exe time, fibo_r(',i,') =', dur, 'sec')
+    print('exe time, fibo_r(', i, ') =', dur, 'sec')
     if dur_prev == 0:
         print('exe took', dur, 'sec')
     else:
         print('exe took', dur - dur_prev, 'sec more to execute')
-        print('\nratio of', (((dur / dur_prev)*100)//1)/100, 'between two consecutive values of n\n')
+        print('\nratio of', (((dur / dur_prev) * 100) // 1) / 100, 'between two consecutive values of n\n')
     dur_prev = dur
 
 # we notice that if fibo_r(n) takes t time to execute, fibo_r(n + 1) will take 1.5~1.7*t time to execute

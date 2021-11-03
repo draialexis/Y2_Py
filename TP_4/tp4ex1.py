@@ -1,19 +1,33 @@
 import matplotlib.pyplot as plt
-import numpy as np
+from math import sqrt
+
 
 def fibo(n):
     res = 0
     if n < 0:
         print('oh no no no')
-        return -1
+        exit()
     if n == 0:
         return 0
     elif n == 1:
         return 1
     else:
         res += (fibo(n - 1) + fibo(n - 2))
-
     return res
+
+
+def fibo_approx(n):
+    if n < 0:
+        print('oh no no no')
+        exit()
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n <= 5:
+        return fibo(n - 2) + fibo(n - 1)
+    else:
+        return fibo(n - 1) * ((1 + sqrt(5)) / 2)
 
 
 def fibo_liste(n):
@@ -24,12 +38,13 @@ def fibo_liste(n):
 
     return res
 
+
 L = fibo_liste(25)
 plt.plot(L[5:])
 plt.show()
 
+plt.plot(L[5:])
 plt.yscale('log')
 plt.show()
 
-# croissance exponentielle
-
+# u_n+1 = ((1 + sqrt(5)) / 2) * u_n --> fibo_approx
