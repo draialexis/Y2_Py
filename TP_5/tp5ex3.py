@@ -1,8 +1,9 @@
 import sympy as sm
 
+sm.var('x y z')
+
 # 1)
 
-sm.var('x y z')
 p = 3 * (x ** 3) - (7 * (x ** 2) / 2) - (x / 2) + 1
 s = sm.solve(p, x)
 for i in range(len(s)):
