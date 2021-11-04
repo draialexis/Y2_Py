@@ -1,14 +1,10 @@
-import math as m
-
 # 1)
 
 n = 0
 x = 0.23
-prev = x
 
 while not n > 60:
-    x = 4 * prev * (1 - prev)
-    prev = x
+    x = 4 * x * (1 - x)
     if n == 10 or n == 60:
         print('at', n, ', x =', x)
     n += 1
@@ -18,11 +14,9 @@ print('and now...')
 
 n = 0
 x = 0.23
-prev = x
 
 while not n > 60:
-    x = (4 * prev) - (4 * prev * prev)
-    prev = x
+    x = (4 * x) - (4 * x ** 2)
     if n == 10 or n == 60:
         print('at', n, ', x =', x)
     n += 1
