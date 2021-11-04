@@ -74,28 +74,29 @@ def decode_une(c):
     return switcher.get(c, '#')
 
 
-# my_code = [2, 4, 18, 0, 17]
-# for c in my_code:
-#     print(decode_une(c))
-# print('\n')
+my_code = [2, 4, 18, 0, 17]
+for c in my_code:
+    print(decode_une(c))
+print('\n')
 
 
 # 3)
 
 def encode(str_p):
-    res = map(code_une, str_p)
+    res = list(map(code_une, str_p))
     return res
 
 
-# my_word = 'PYTHON'
+my_word = 'PYTHON'
 
 
 def decode(code):
-    char_list = map(decode_une, code)
+    char_list = list(map(decode_une, code))
     res = "".join(char_list)
     return res
 
-# my_code = code_mot(my_word)
-# print(my_word, '\n->')
-# print(code_mot(my_word), '\n->')
-# print(decode_mot(my_code), '\n')
+
+my_code = encode(my_word)
+print(my_word, '\n->')
+print(encode(my_word), '\n->')
+print(decode(my_code), '\n')
