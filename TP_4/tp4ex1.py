@@ -30,6 +30,24 @@ def fibo_approx(n):
         return fibo(n - 1) * ((1 + sqrt(5)) / 2)
 
 
+def fibo_approx_liste(n):
+    res = []
+
+    for i in range(0, n + 1):
+        res.append(fibo_approx(i))
+
+    return res
+
+
+L = fibo_approx_liste(25)
+plt.plot(L[5:], c='g')
+plt.figure()
+
+plt.plot(L[5:], c='g')
+plt.yscale('log')
+plt.figure()
+
+
 def fibo_liste(n):
     res = []
 
@@ -40,11 +58,9 @@ def fibo_liste(n):
 
 
 L = fibo_liste(25)
-plt.plot(L[5:])
-plt.show()
+plt.plot(L[5:], c='b')
+plt.figure()
 
-plt.plot(L[5:])
+plt.plot(L[5:], c='b')
 plt.yscale('log')
 plt.show()
-
-# u_n+1 = ((1 + sqrt(5)) / 2) * u_n --> fibo_approx
