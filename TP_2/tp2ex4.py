@@ -4,11 +4,9 @@ def fibo(n):
     res = 0
     if n < 0:
         print('oh no no no')
-        return -1
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+        exit()
+    if n == 0 or n == 1:
+        return n
     else:
         res += (fibo(n - 1) + fibo(n - 2))
 
@@ -24,11 +22,14 @@ def fibo_liste(n):
     return res
 
 
-num1 = 20
+num1 = 19
 
+for i in range(0, 20):
+    print('fibo(', i, ') =', fibo(i))
 
-# print('fibo_liste(', num1, ') =', fibo_liste(num1))
-# fibo_liste(num1)
+print('fibo_liste(', num1, ') =', fibo_liste(num1))
+fibo_liste(num1)
+
 
 # 3)
 
@@ -53,5 +54,6 @@ def fibo_weird(n, mod):
 
     return my_sum % mod
 
-# print('fibo_weird(', 100000, ') =', fibo_weird(100000, 10000007))
+
+print('fibo_weird(', 100000, ') =', fibo_weird(100000, 10000007))
 # prints out "2676110"
