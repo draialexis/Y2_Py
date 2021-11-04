@@ -79,21 +79,17 @@ for c in my_code:
     print(decode_une(c))
 print('\n')
 
-
 # 3)
-
-def encode(str_p):
-    res = list(map(code_une, str_p))
-    return res
-
 
 my_word = 'PYTHON'
 
 
+def encode(str_p):
+    return list(map(code_une, str_p))
+
+
 def decode(code):
-    char_list = list(map(decode_une, code))
-    res = "".join(char_list)
-    return res
+    return "".join(list(map(decode_une, code)))
 
 
 my_code = encode(my_word)

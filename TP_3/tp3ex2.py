@@ -65,14 +65,11 @@ def decode_une(c):
 
 
 def encode(str_p):
-    res = list(map(code_une, str_p))
-    return res
+    return list(map(code_une, str_p))
 
 
 def decode(code):
-    char_list = list(map(decode_une, code))
-    res = "".join(char_list)
-    return res
+    return "".join(list(map(decode_une, code)))
 
 
 # 1)

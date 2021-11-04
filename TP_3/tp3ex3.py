@@ -73,49 +73,20 @@ def decode_une(c):
 
 
 def encode(str_p):
-    return map(code_une, str_p)
+    return list(map(code_une, str_p))
 
 
 def decode(code):
-    return "".join(map(decode_une, code))
+    return "".join(list(map(decode_une, code)))
 
-
-A = [0,
-     1,
-     2,
-     3,
-     4,
-     5,
-     6,
-     7,
-     8,
-     9,
-     10,
-     11,
-     12,
-     13,
-     14,
-     15,
-     16,
-     17,
-     18,
-     19,
-     20,
-     21,
-     22,
-     23,
-     24,
-     25]
-
-
-# "Supposons que 'a' est premier avec 26" -> p(a, 26) = 1
 
 # 1)
 
-# for i in A:
-#    res = p(i, 26)
-#    if res == 1:
-#        print(i, 'is coprime with 26')
+# "Supposons que 'a' est premier avec 26" -> p(a, 26) = 1
+for i in range(26):
+    res = p(i, 26)
+    if res == 1:
+        print(i, 'is coprime with 26')
 
 
 # 2)
@@ -193,11 +164,11 @@ my_dec_string = de_affine(my_enc_string, my_a, my_b)
 
 print('dec_str:', my_dec_string)
 
-# for i in [1, 3, 5, 7, 9]: #we choose these 'a's in [1, 9[ because even numbers don't have an inverse mod 26
-# for j in range(1, 10):
-# print('dec_kybix (i=', i, 'j=', j, '):', de_affine('KYBIX', i, j))
+for i in [1, 3, 5, 7, 9]:  # we choose these 'a's in [1, 9[ because even numbers don't have an inverse mod 26
+    for j in range(1, 10):
+        print('dec_kybix (i=', i, 'j=', j, '):', de_affine('KYBIX', i, j))
 # dec_kybix (i= 9 j= 1 ): BRAVO
 
 for i in range(1, 27):
     print('b=', i, ':', de_affine('LP NVP UJVR YCJAVXRJUR L PRG AP QH LJFYCPIPURXJU', 15, i))
-    # b= 7 : CE QUE NOUS PRODUISONS C EST DE LA COMPREHENSION
+# b= 7 : CE QUE NOUS PRODUISONS C EST DE LA COMPREHENSION
