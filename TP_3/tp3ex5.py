@@ -79,7 +79,6 @@ fibo_r(30)
 t_fin = time()
 dur = t_fin - t_start
 print('exe time, fibo_r(', 30, ') =', dur, 'sec')
-# exe time: 0.6sec (t(0))
 
 # dur(fibo_r(30)) = dur(0) * 1.61803398875^30 = 0.3593761920928955 sec
 # dur(fibo_r(80)) = dur(30) * 1.61803398875^50 = 320.5 years
