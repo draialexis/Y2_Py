@@ -6,5 +6,6 @@ def pgcd(a, b):
         b = r
     return a
 
-# print('pgcd (495, 275) =', pgcd(495, 275))
-# print('pgcd (495, 275) =', pgcd(200, 80))
+
+print('pgcd (495, 275) =', pgcd(495, 275))
+print('pgcd (200, 80) =', pgcd(200, 80))
