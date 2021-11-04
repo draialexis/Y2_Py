@@ -46,12 +46,11 @@ print(list3, '+', list4, '=', (dec(list3) + dec(list4)))  # like this?
 
 def binaire(n):
     res = []
-    digit = -1
     while n > 0:
         digit = n % 2
-        res.insert(0, digit)  # or "res.append(digit)"
+        res.append(digit)
         n = n // 2
-    # or "res = inverse(res)"
+    res = inverse(res)
     return res
 
 
@@ -65,5 +64,6 @@ print(num2, '(b2) =', binaire(num2))
 print(list3, '+', list4, '=', binaire((dec(list3) + dec(list4))))  # like this?
 
 # 6)
-
-print(factorial(50), '(b2) =', binaire(factorial(50)))
+factbin = binaire(factorial(50))
+print(factorial(50), '(b2) =', factbin)
+print('length:', len(factbin))
