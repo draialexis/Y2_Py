@@ -26,12 +26,10 @@ a = 3
 
 v = m.log((1 + a) / a)
 print('v1 =', v)
-prev = v
 n = 2  # (!) n >= 2
 
-while not n > 40:
-    v = (1 / (n - 1)) - (a * prev)
-    prev = v
+while n <= 40:
+    v = (1 / (n - 1)) - (a * v)
     print('at n =', n, ', v =', v)
 
     n += 1
@@ -45,15 +43,17 @@ print('yaouch')
 # 3)
 
 v = ((1 / 180) + (1 / 240)) / 2
-print('v60 =', v)
-prev = v
+print('approx_v60 =', v)
 n = 60
 
-while not n < 40:
-    v = - (prev - (1 / (n - 1)) / a)
-    prev = v
+while n >= 40:
+    v = - ((v - (1 / (n - 1))) / a)
     print('at n =', n, ', v =', v)
 
     n -= 1
 
-print('that\'s better')
+    # this looks better, pretty close to actual result.
+    # ~=0.0062885715418348382265
+    # Which is great for an approximation
+
+print('yup')
