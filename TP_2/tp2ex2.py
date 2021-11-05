@@ -46,14 +46,14 @@ v = ((1 / 180) + (1 / 240)) / 2
 print('approx_v60 =', v)
 n = 60
 
-while n >= 40:
+while n > 40:
     v = - ((v - (1 / (n - 1))) / a)
-    print('at n =', n, ', v =', v)
+    print('at n =', n - 1, ', v =', v)
 
     n -= 1
 
     # this looks better, pretty close to actual result.
-    # ~=0.0062885715418348382265
+    # ((this)=0.006288571542029066 / (better, with sympy)=0.0062885715418348382265)
     # Which is great for an approximation
 
 print('yup')
