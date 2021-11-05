@@ -14,11 +14,13 @@ print('1): a, b, & c:')
 sm.pprint(s)
 
 # 2)
+
 print('\n2): P with (a, b, c) expressed as functions of (u, v, w):')
 p = p.subs(s)
 sm.pprint(p)
 
 # 3)
+
 print('\n3): P with (u, v, w, h) = (0, 2, 1, 2):')
 s = {
     u: 0,
@@ -26,10 +28,6 @@ s = {
     w: 1,
     h: 2
 }
-
-p = p.subs(s)
-s = sm.solve([exp1, exp2, exp3], [a, b, c])
-sm.pprint(s)
 
 p = p.subs(s)
 sm.pprint(p)
