@@ -27,9 +27,6 @@ s = {
     h: 2
 }
 
-exp1 = exp1.subs(s)
-exp2 = exp2.subs(s)
-exp3 = exp3.subs(s)
 p = p.subs(s)
 s = sm.solve([exp1, exp2, exp3], [a, b, c])
 sm.pprint(s)
