@@ -69,11 +69,11 @@ def in_radius(name, radius):
     county = insee[loc_idx][:2]
     counter = 0
     radius = km_to_rad(radius)
-    locs_in_county = [loc[loc_idx]]
+    locs_in_county = 1
 
     for idx in range(len(loc)):
         if insee[idx][:2] == county and idx != loc_idx:
-            locs_in_county.append(loc[idx])
+            locs_in_county += 1
             dist_lat_here = abs(lat[idx] - here_lat)
             dist_long_here = abs(long[idx] - here_long)
             dist_here = dist_lat_here + dist_long_here
@@ -81,7 +81,7 @@ def in_radius(name, radius):
                 # print(loc[idx], "is", rad_to_km(dist_here), "km from", name)
                 counter += 1
 
-    return counter, (counter * 100 / len(locs_in_county))
+    return counter, (counter * 100 / locs_in_county)
 
 
 number, ratio = in_radius(name, radius)
