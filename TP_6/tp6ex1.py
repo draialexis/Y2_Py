@@ -1,5 +1,3 @@
-from datetime import datetime
-
 import matplotlib.pyplot as plt
 
 dt = []
@@ -25,10 +23,8 @@ print("number of entries:", len(co))
 print("\n########EX2########\n")
 
 min_co = min(co)
-min_co_dt = ""
-for i in range(0, len(co)):
-    if min_co == co[i]:
-        min_co_dt = dt[i]
+min_co_ind = co.index(min_co)
+min_co_dt = dt[min_co_ind]
 
 print("min_co:", min_co)
 print("date of min_co:", min_co_dt)
