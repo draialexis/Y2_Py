@@ -82,7 +82,7 @@ for key in dicts:
 plt.xticks([], [])
 plt.legend()
 plt.title(title)
-# plt.show()
+plt.show()
 
 print("\n########EX5########\n")
 
@@ -107,7 +107,7 @@ for val in pop:
 plt.scatter(x, y, c=colors)
 plt.xlabel('index of commune')
 plt.ylabel('population in hundreds')
-# plt.show()
+plt.show()
 
 print("\n########EX6########\n")
 
@@ -133,7 +133,7 @@ def agglomeration(name):
             dist_long_here = abs(long[idx] - here_long)
             dist_here = dist_lat_here + dist_long_here
             if dist_here < radius:
-                print(loc[idx], "is", rad_to_km(dist_here), "km from", name)
+                # print(loc[idx], "is", rad_to_km(dist_here), "km from", name)
                 counter += 1
 
     return counter
