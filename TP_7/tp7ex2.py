@@ -2,10 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.random import randint
 
+
 # 1) & 2)
 
 def pf():
     return randint(0, 2, 100)
+
 
 def in_row(l):
     streaks = [0]
@@ -18,6 +20,7 @@ def in_row(l):
                 streaks.append(in_row)
             in_row = 0
     return max(streaks)
+
 
 probs = {
     3: 0,

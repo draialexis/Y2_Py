@@ -8,17 +8,19 @@ l1 = randint(0, 2, 100)
 
 # 2)
 
-s2 = np.sum(L)
+s2 = np.sum(l1)
 
 # 3)
 
 sup_53 = 0
 inf_eq_40 = 0
 
+
 def pf():
     L = randint(0, 2, 100)
     res = np.sum(L)
     return res
+
 
 # print("# of tails out of 100 throws:", pf())
 
@@ -47,18 +49,17 @@ for _ in range(tries):
     if res <= 40:
         inf_eq_40 += 1
 
-a = sup_53 / tries # sample mean for sup_53
-b = inf_eq_40 / tries # sample mean for inf_eq_40
-print('sample mean for sup_53:', sup_53 , '/', tries, '=', a)
-print('sample mean for inf_eq_40:', inf_eq_40 , '/', tries, '=', b)
+a = sup_53 / tries  # sample mean for sup_53
+b = inf_eq_40 / tries  # sample mean for inf_eq_40
+print('sample mean for sup_53:', sup_53, '/', tries, '=', a)
+print('sample mean for inf_eq_40:', inf_eq_40, '/', tries, '=', b)
 
 # 4)
 
-my_bins = [(i+1) for i in range(100)]
+my_bins = [(i + 1) for i in range(100)]
 
 plt.hist(results, bins=my_bins)
 plt.show()
-
 
 test = [0]
 print(test)
