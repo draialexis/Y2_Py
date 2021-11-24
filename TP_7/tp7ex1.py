@@ -56,9 +56,9 @@ print('sample mean for inf_eq_40:', inf_eq_40, '/', tries, '=', b)
 
 # 4)
 
-my_bins = [(i + 1) for i in range(100)]
+my_bins = [(i - 0.5) for i in range(101)]  # -0.5->0.5, 0.5->1.5, etc.
 
-plt.hist(results, bins=my_bins)
+plt.hist(results, bins=my_bins, edgecolor='black')
 plt.show()
 
 test = [0]

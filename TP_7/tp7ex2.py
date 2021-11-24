@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from numpy.random import randint
 
@@ -28,7 +27,7 @@ probs = {
     5: 0,
     6: 0,
     7: 0,
-    8: 0,
+    8: 0
 }
 
 tries = 20000
