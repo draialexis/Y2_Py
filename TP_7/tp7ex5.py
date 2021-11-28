@@ -64,9 +64,10 @@ def formula(x, sigma):
     return (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-(pow(x, 2)) / (2 * pow(sigma, 2)))
 
 
-# seems top work better for sigma = 5... what did I do wrong?
-
+# seems to work better for sigma = 5... what did I do wrong?
 
 ys = [(formula(i, 10)) for i in range(-50, 51)]
 plt.plot(np.linspace(-50, 50, 101), ys)
 plt.show()
+
+# normal distribution function / gaussian Bell function
