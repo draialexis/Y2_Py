@@ -1,5 +1,4 @@
 import numpy as np
-import sympy as sm
 """
 somme des chiffres de 2013!
 """
@@ -24,5 +23,5 @@ def sum_digits(n):
 print(sum_digits(fact(2013)))
 
 """
-sum_digits(fact(2013)) = 24021
+sum_digits(fact(2013)) → 24021
 """
