@@ -8,4 +8,4 @@ plt.show()
 hist des 10000 1er val de la suite, comparer les barres
 """
 
-print("the terms given by sin(x) don't appear to be uniformly spaced within the [-1, 1] interval")
+print("the terms given by sin(x) don't appear to be uniformly spaced within the [-1, 1] interval. Rounding?")

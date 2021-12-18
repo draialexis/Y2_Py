@@ -1,16 +1,16 @@
 """
 DIX² + UN² = CENTUN
 """
-for d in range(0, 10):
+for d in range(1, 10):
     for i in range(0, 10):
         if i != d:
             for x in range(0, 10):
                 if x != d and x != i:
-                    for u in range(0, 10):
+                    for u in range(1, 10):
                         if u != d and u != i and u != x:
                             for n in range(0, 10):
                                 if n != d and n != i and n != x and n != u:
-                                    for c in range(0, 10):
+                                    for c in range(1, 10):
                                         if c != d and c != i and c != x and c != u and c != n:
                                             for e in range(0, 10):
                                                 if e != d and e != i and e != x and e != u and e != n and e != c:
