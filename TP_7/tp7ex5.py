@@ -16,9 +16,10 @@ def bern(a, b, p):
 
 def draw_walk(s):
     steps = [(bern(-1, 1, 0.5)) for _ in range(s)]
-    walk = np.cumsum(steps)
-    x = np.linspace(0, s, s)
-    plt.plot(walk, x)
+    steps_ = np.array(steps)
+    x = np.cumsum(steps_)
+    y = np.linspace(0, s, s)
+    plt.plot(x, y)
 
 
 draw_walk(s_1)
@@ -47,7 +48,8 @@ s_3 = 100
 positions = []
 for i in range(r):
     steps = [(bern(-1, 1, 0.5)) for _ in range(s_3)]
-    walk = np.cumsum(steps)
+    steps_ = np.array(steps)
+    walk = np.cumsum(steps_)
     positions.append(walk[-1])
 
 my_bins = [(i - 0.5) for i in range(-50, 51)]

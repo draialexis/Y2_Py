@@ -5,8 +5,7 @@ print('########1########')
 
 
 def bern(a, b, p):
-    r = rand()
-    if r <= p:
+    if rand() <= p:
         return b
     else:
         return a
