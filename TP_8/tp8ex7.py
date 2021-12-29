@@ -11,8 +11,9 @@ def dicho(f, a, b, eps):
         b = tmp
 
     m = (a + b) / 2
-    c = 1
+    c = 0
     while abs(f(m)) > eps:
+        c += 1
         print("\nc:", c)
         print("[a, b] = [", a, ",", b, "]")
         print("m = (a + b) / 2 = ", m)
@@ -24,7 +25,7 @@ def dicho(f, a, b, eps):
         else:
             print("sign doesn't change in [", a, ",", b, "]...")
             return None
-        c += 1
+
         if(c > 100): #arbitrary, could be dynamic or chosen by input
             print("can't find it...")
             return None
