@@ -6,9 +6,7 @@ def dicho(f, a, b, eps):
         print("[", a, ",", b, "] is not a thing...")
         return None
     if a > b: #interval shouldn't be [b, a]
-        tmp = a
-        a = b
-        b = tmp
+        a, b = b, as
 
     m = (a + b) / 2
     c = 0
