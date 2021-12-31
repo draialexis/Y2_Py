@@ -1,5 +1,6 @@
-import matplotlib.pyplot as plt
 from math import sqrt
+
+import matplotlib.pyplot as plt
 
 
 def fibo(n):

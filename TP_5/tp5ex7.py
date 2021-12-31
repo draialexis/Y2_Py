@@ -1,5 +1,5 @@
 import sympy as sm
-from sympy import sqrt, pprint, diff, integrate, log, simplify, factor
+from sympy import pprint, integrate
 
 sm.var('x n a')
 

@@ -1,5 +1,3 @@
-import numpy as np
-
 sol = 0
 
 n = 1

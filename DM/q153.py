@@ -16,9 +16,10 @@ for d in range(1, 10):
                                                 if e != d and e != i and e != x and e != u and e != n and e != c:
                                                     for t in range(0, 10):
                                                         if t != d and t != i and t != x and t != u and t != n and t != c and t != e:
-                                                            dix = (d*100)+(i*10)+x
-                                                            un = (u*10)+n
-                                                            centun = (c*100000)+(e*10000)+(n*1000)+(t*100)+(u*10)+n
+                                                            dix = (d * 100) + (i * 10) + x
+                                                            un = (u * 10) + n
+                                                            centun = (c * 100000) + (e * 10000) + (n * 1000) + \
+                                                                     (t * 100) + (u * 10) + n
                                                             if pow(dix, 2) + pow(un, 2) == centun:
                                                                 print('DIX =', dix)
                                                                 print('UN =', un)

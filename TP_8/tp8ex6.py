@@ -1,11 +1,10 @@
-import numpy as np
-import sympy as sm
 import matplotlib.pyplot as plt
+import numpy as np
 
 print('\n===========1) & 2)==========\n')
 
 N = 20
-dom = np.linspace(-1*(np.pi), np.pi, N)
+dom = np.linspace(-1 * np.pi, np.pi, N)
 b = np.sin(dom)
 print("b=\n", b)
 
@@ -39,9 +38,9 @@ plt.figure()
 
 print('\n=============3)=============\n')
 
-x = np.linspace(-1*(np.pi), np.pi, N)
+x = np.linspace(-1 * (np.pi), np.pi, N)
 y = np.sin(x)
-k = len(x)-1
+k = len(x) - 1
 P_ = np.polyfit(x, y, k)
 print(P_)
 plt.plot(x, y)

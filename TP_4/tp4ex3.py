@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # 1) & 2)
 
@@ -29,5 +29,3 @@ plt.title("f_t: x -> x^t, x€[0,1]")
 plt.axis('equal')
 plt.grid()
 plt.show()
-
-

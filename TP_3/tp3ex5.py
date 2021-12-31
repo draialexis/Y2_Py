@@ -18,8 +18,6 @@ print('rec: u(950) =', harmonique(950))
 
 # print('rec: u(1010) =', harmonique(1010)) #recursion depth > 1000 (~max)
 
-# this doesn't work and I don't know why
-#
 def harmonique_imp(n):
     if n < 0:
         print("that's not even a thing!'")

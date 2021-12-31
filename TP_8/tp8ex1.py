@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 plt.hist(np.sin(np.arange(0, 10000, 1)), bins=np.linspace(-1, 1, 100), edgecolor='black')
 plt.show()

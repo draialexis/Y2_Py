@@ -72,7 +72,7 @@ Modier la matrice A en remplacant l'element 4 par 0. Remplacer la deuxieme lign
 A[1, 1] = 0
 print("A =\n", A)
 
-C[1,:] = np.array([4, 3, 2, 1])
+C[1, :] = np.array([4, 3, 2, 1])
 print("C =\n", C)
 
 print('\n=============4)=============\n')
@@ -85,9 +85,7 @@ for i in range(2, 11):
     A_pow10_for = A_pow10_for.dot(A)
     # print("A_pow", i, "_for =\n", A_pow10_for)
 
-
 print("A_pow10_for =\n", A_pow10_for)
 
 A_pow10_mp = matrix_power(A, 10)
 print("A_pow10_mp =\n", A_pow10_mp)
-

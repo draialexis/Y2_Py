@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 a = [0, 0]
 b = [2, 0]

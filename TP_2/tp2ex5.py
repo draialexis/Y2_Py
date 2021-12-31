@@ -1,11 +1,10 @@
-def pgcd(a, b):
+def gcd(a, b):
     while b != 0:
         r = a % b
-        # print(a, '%', b, '=', r)
         a = b
         b = r
     return a
 
 
-print('pgcd (495, 275) =', pgcd(495, 275))
-print('pgcd (200, 80) =', pgcd(200, 80))
+print('gcd(495, 275) =', gcd(495, 275))
+print('gcd(200, 80) =', gcd(200, 80))

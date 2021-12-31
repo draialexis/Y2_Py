@@ -1,4 +1,6 @@
-def p(a, b):
+import tp3ex1 as prv
+
+def gcd(a, b):
     while b != 0:
         r = a % b
         a = b
@@ -6,85 +8,11 @@ def p(a, b):
     return a
 
 
-def code_une(lt):
-    switcher = {
-        'A': 0,
-        'B': 1,
-        'C': 2,
-        'D': 3,
-        'E': 4,
-        'F': 5,
-        'G': 6,
-        'H': 7,
-        'I': 8,
-        'J': 9,
-        'K': 10,
-        'L': 11,
-        'M': 12,
-        'N': 13,
-        'O': 14,
-        'P': 15,
-        'Q': 16,
-        'R': 17,
-        'S': 18,
-        'T': 19,
-        'U': 20,
-        'V': 21,
-        'W': 22,
-        'X': 23,
-        'Y': 24,
-        'Z': 25,
-        ' ': ' ',
-    }
-    return switcher.get(lt, '#')
-
-
-def decode_une(c):
-    switcher = {
-        0: 'A',
-        1: 'B',
-        2: 'C',
-        3: 'D',
-        4: 'E',
-        5: 'F',
-        6: 'G',
-        7: 'H',
-        8: 'I',
-        9: 'J',
-        10: 'K',
-        11: 'L',
-        12: 'M',
-        13: 'N',
-        14: 'O',
-        15: 'P',
-        16: 'Q',
-        17: 'R',
-        18: 'S',
-        19: 'T',
-        20: 'U',
-        21: 'V',
-        22: 'W',
-        23: 'X',
-        24: 'Y',
-        25: 'Z',
-        ' ': ' ',
-    }
-    return switcher.get(c, '#')
-
-
-def encode(str_p):
-    return list(map(code_une, str_p))
-
-
-def decode(code):
-    return "".join(list(map(decode_une, code)))
-
-
 # 1)
 
 # "Supposons que 'a' est premier avec 26" -> p(a, 26) = 1
 for i in range(26):
-    res = p(i, 26)
+    res = gcd(i, 26)
     if res == 1:
         print(i, 'is coprime with 26')
 
@@ -97,7 +25,7 @@ for i in range(26):
 # (pour une valeur admissible de a).
 
 def affine(string, a, b):
-    nums = encode(string)
+    nums = prv.encode(string)
     nums_delta = []
     for num in nums:
         if isinstance(num, int):
@@ -108,7 +36,7 @@ def affine(string, a, b):
         elif num == ' ':
             nums_delta.append(num)
 
-    return decode(nums_delta)
+    return prv.decode(nums_delta)
 
 
 my_string = 'CONFIDENTIEL'
@@ -144,7 +72,7 @@ def inverse(a):
 # 4)
 
 def de_affine(string, a, b):
-    nums = encode(string)
+    nums = prv.encode(string)
     nums_delta = []
     for num in nums:
         if isinstance(num, int):
@@ -157,7 +85,7 @@ def de_affine(string, a, b):
         elif num == ' ':
             nums_delta.append(num)
 
-    return decode(nums_delta)
+    return prv.decode(nums_delta)
 
 
 my_dec_string = de_affine(my_enc_string, my_a, my_b)
