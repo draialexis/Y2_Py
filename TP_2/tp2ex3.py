@@ -15,16 +15,10 @@ print(L)
 
 # 2)
 
-def dec(B):
+def dec(b):
     res = 0
-    i = len(B) - 1
-    #   B = inverse(B)
-
-    for digit in B:
+    for i, digit in enumerate(b[::-1]):
         res += pow(2, i) * digit
-        # •print('+', pow(2, i), '*', digit, '=', pow(2, i) * digit)
-        i -= 1
-
     return res
 
 
@@ -46,11 +40,9 @@ print(list3, '+', list4, '=', (dec(list3) + dec(list4)))  # like this?
 def binaire(n):
     res = []
     while n > 0:
-        digit = n % 2
-        res.append(digit)
+        res.append(n % 2)
         n = n // 2
-    res = inverse(res)
-    return res
+    return res[::-1]
 
 
 num1 = 13

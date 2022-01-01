@@ -25,9 +25,9 @@ my_str = 'CE MESSAGE EST CONFIDENTIEL'
 delta = -11
 print(my_str, '| delta =', delta)
 
-encyphered = cesar(my_str, delta, 0)
+encyphered = cesar(my_str, delta, False)
 print(encyphered)
-decyphered = cesar(encyphered, delta, 1)
+decyphered = cesar(encyphered, delta, True)
 print(decyphered)
 
 # 4)
