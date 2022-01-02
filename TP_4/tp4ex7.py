@@ -22,8 +22,7 @@ for i in range(201, 211):
 
 print(l1)
 
-# the sequence converges towards 0.5238095238095238
-# when a = 2.1
+print('#1 the sequence converges towards 0.5238095238095238 when a = 2.1')
 
 # 2)
 
@@ -31,12 +30,10 @@ print(l1)
 l2 = []
 for i in range(201, 211):
     l2.append(ser(i, 3.1))
-plt.plot(np.linspace(0, 1, 10), l2)
-plt.figure()
+# plt.plot(np.linspace(0, 1, 10), l2)
+# plt.show()
 
-# the sequence oscillates
-# between 0.5570939072227653 and 0.7648948858499187
-# when a = 3.1
+print('#2 the sequence oscillates between 0.5570939072227653 and 0.7648948858499187 when a = 3.1')
 
 # 3)
 
@@ -44,10 +41,10 @@ l3 = []
 a_ = [3.46] * 10
 for i in range(201, 211):
     l3.append(ser(i, 3.46))
-plt.scatter(a_, l3)
-plt.figure()
+# plt.scatter(a_, l3)
+# plt.show()
 
-# 4 points can be seen, now oscillating between 4 values at a = 3.46
+print('#3 four points can be seen, now oscillating between 4 values at a = 3.46')
 
 # 4)
 
@@ -62,4 +59,4 @@ for i in a:
     l4 = []
 plt.show()
 
-# this looks a lot like a binary tree
+print('#4 this looks a lot like a binary tree')

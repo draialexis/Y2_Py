@@ -7,7 +7,7 @@ def fibo(n):
     res = 0
     if n < 0:
         print('oh no no no')
-        exit()
+        return None
     if n == 0:
         return 0
     elif n == 1:

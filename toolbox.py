@@ -5,8 +5,9 @@
 # from scipy.integrate import quad
 #
 #
-# import matplotlib.pyplot as plt
-# import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
+
 # import math as m
 # import sympy as sm
 
@@ -180,3 +181,44 @@ def affine(string, a, b, is_decypher):
             nums_delta.append(num)
 
     return decode(nums_delta)
+
+
+def tri(x, y, c):
+    plt.plot([x, x + c, x + (c / 2), x], [y, y, y + (c * np.sqrt(3) / 2), y], color="b")
+
+
+def serpinski_tri(n, x, y, c):
+    if n >= 1:
+        tri(x, y, c)
+        tri(x + c, y, c)
+        tri(x + c / 2, y + c * (np.sqrt(3) / 2), c)
+        serpinski_tri(n - 1, x, y, c / 2)
+        serpinski_tri(n - 1, x + c, y, c / 2)
+        serpinski_tri(n - 1, x + c / 2, y + c * (np.sqrt(3) / 2), c / 2)
+
+
+"""
+TP4
+"""
+
+
+def fibo(n):
+    res = 0
+    if n < 0:
+        print('oh no no no')
+        return None
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        res += (fibo(n - 1) + fibo(n - 2))
+    return res
+
+
+# tgt = f'(x_a) * (x - x_a) + f(x_a)
+
+"""
+TP5
+"""
+

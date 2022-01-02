@@ -8,11 +8,11 @@ def triangle(x, y, c):
 
 # 1)
 
-triangle(0, 0, 0.5)
-triangle(0.5, 0, 0.5)
-triangle(0.25, 0.5 * (np.sqrt(3) / 2), 0.5)
-plt.axis('equal')
-plt.figure()
+# triangle(0, 0, 0.5)
+# triangle(0.5, 0, 0.5)
+# triangle(0.25, 0.5 * (np.sqrt(3) / 2), 0.5)
+# plt.axis('equal')
+# plt.figure()
 
 
 # 2)

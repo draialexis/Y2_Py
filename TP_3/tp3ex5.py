@@ -53,7 +53,7 @@ dur_prev = 0
 lo = 25
 hi = 36
 n = hi - lo
-avg = 0
+total_dur_ratios = 0
 for i in range(lo, hi):
     t_start = time()
     fibo_r(i)
@@ -61,11 +61,11 @@ for i in range(lo, hi):
     dur = t_fin - t_start
     print('exe time, fibo_r(', i, ') =', dur, 'sec')
     if not dur_prev == 0:
-        avg += dur / dur_prev
+        total_dur_ratios += dur / dur_prev
         print('exe took', dur - dur_prev, 'sec more to execute')
         print('\nratio of', round(dur / dur_prev, 2), 'between exe time for two consecutive values of n\n')
     dur_prev = dur
-print('avg ratio of increase in exe time:', avg / n)
+print('avg ratio of increase in exe time:', total_dur_ratios / n)
 
 # we notice that if fibo_r(n) takes t time to execute, fibo_r(n + 1) will take 1.5~1.7*t time to execute
 # ... when n ≥ 30

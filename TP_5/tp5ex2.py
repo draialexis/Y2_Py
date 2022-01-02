@@ -1,6 +1,6 @@
 import sympy as sm
 
-n = 0
+n = 1
 x = sm.Float(0.23)
 
 while not n > 60:
@@ -11,7 +11,7 @@ while not n > 60:
 
 print('and now...')
 
-n = 0
+n = 1
 x = sm.Float(0.23)
 
 while not n > 60:
