@@ -222,3 +222,34 @@ def fibo(n):
 TP5
 """
 
+"""
+BONUS
+"""
+
+
+def polygone(n, is_inscribed=True):
+    # setting up the true circle constant jus cuz
+    tau = 2 * np.pi
+    # setting up a unit circle
+    x = np.linspace(0, tau)
+    plt.plot(np.cos(x), np.sin(x))
+
+    cst = tau / n  # the absolute angle covered by each slice
+    coeff = 1  # the coefficient by which we find coordinates of vertices, important if is_inscribed == False
+    if not is_inscribed:
+        coeff = 1 / np.cos(tau / (2 * n))
+
+    x = []
+    y = []
+    for i in range(n):
+        theta = i * cst  # the angle of a specific slice relative to the origin
+        # the coordinates of the vertices
+        x.append(coeff * np.cos(theta))
+        y.append(coeff * np.sin(theta))
+
+    # closing the circuit
+    x.append(x[0])
+    y.append(y[0])
+    plt.plot(x, y)
+    plt.axis('equal')
+    plt.show()
