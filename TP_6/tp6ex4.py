@@ -46,11 +46,7 @@ print("letters by occurrence:", nb_occ)
 print("\n########EX2########\n")
 
 
-def compo2(couple):
-    return couple[1]
-
-
-common_10 = sorted(nb_occ, key=compo2, reverse=True)[:10]
+common_10 = sorted(nb_occ, key=lambda x: x[1], reverse=True)[:10]
 print("10 most common letters:", common_10)
 
 print("\n########EX3########\n")
@@ -68,8 +64,8 @@ for entry in common_10:
     letters.append(entry[0])
     ratios.append(entry[1] * 100 / total_letters)
 
-plt.bar(index, ratios, width, label=letters)
-# plt.bar(index, ratios, width, color=np.random.rand(len(index), 3), label=letters)
+# plt.bar(index, ratios, width, label=letters)
+plt.bar(index, ratios, width, color=np.random.rand(len(index), 3), label=letters)
 
 title = 'Occurences of characters, in percents'
 

@@ -26,11 +26,10 @@ pprint(v)
 # 3)
 
 v = v.subs(a, 3)
-print('\ninteg(f[0,1], n:40, a:3) =')
-pprint(v)
+print('\ninteg(f[0,1], n:40, a:3) \n=', v)
 
 # 4)
 
-print(v.evalf(20))
+print('=', v.evalf(20))
 
 # our result from tp2ex2 was pretty close, this is better obviously

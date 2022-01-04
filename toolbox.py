@@ -216,15 +216,26 @@ def fibo(n):
     return res
 
 
-# tgt = f'(x_a) * (x - x_a) + f(x_a)
+"""
+TP6
+"""
 
-"""
-TP5
-"""
+
+
+
 
 """
 BONUS
 """
+
+
+def tangent(foo, x):
+    # or use sympy and tgt = f'(x_a) * (x - x_a) + f(x_a)
+    h = 1e-5
+    a = (foo(x + h) - foo(x - h)) / (2 * h)
+
+    b = foo(x) - (x * a)
+    return a, b
 
 
 def polygone(n, is_inscribed=True):

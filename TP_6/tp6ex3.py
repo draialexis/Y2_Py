@@ -26,10 +26,6 @@ def rad_to_km(rad):
     return rad * (1 / 0.00015961)
 
 
-def compo2(couple):
-    return couple[1]
-
-
 def closest_in_county(name):
     name = name.lower()
     loc_idx = loc.index(name)
@@ -41,7 +37,7 @@ def closest_in_county(name):
             dist_here = abs(lat[idx] - here_lat) + abs(long[idx] - here_long)
             locs_dist_in_county.append((loc[idx], rad_to_km(dist_here)))
 
-    return sorted(locs_dist_in_county, key=compo2)
+    return sorted(locs_dist_in_county, key=lambda x: x[1])
 
 
 name = "Lille"

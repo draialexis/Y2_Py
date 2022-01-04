@@ -34,7 +34,7 @@ print('integ(u*v\') =', part1, '- integ (', part2, ')')
 print('integ(u*v\') =')
 f_i = part1 - integrate(part2, x)
 pprint(simplify(f_i))
-print('')
+print('=')
 
 # simple from here on
 res = f_i.subs(x, hi) - f_i.subs(x, lo)
