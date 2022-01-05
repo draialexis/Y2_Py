@@ -17,7 +17,7 @@ def in_row(l):
         else:
             if in_row > 0:
                 streaks.append(in_row)
-            in_row = 0
+                in_row = 0
     return max(streaks)
 
 
@@ -38,6 +38,8 @@ for _ in range(tries):
         if max_streak >= key:
             probs[key] += 1
 
+for key in probs:
+    probs[key] = probs[key] * 100 / tries
 print(probs)
 
 plt.bar(probs.keys(), probs.values(), color='g')

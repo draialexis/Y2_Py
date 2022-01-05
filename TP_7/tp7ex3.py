@@ -7,8 +7,7 @@ print('########1########')
 def bern(a, b, p):
     if rand() <= p:
         return b
-    else:
-        return a
+    return a
 
 
 print('should return 1:', bern(-1, 1, 1.0))

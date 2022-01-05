@@ -15,12 +15,12 @@ print('########2########')
 
 print('############a####')
 
+r = 20000
+
 tally = {
     'yes': 0,
     'no': 0
 }
-
-r = 20000
 
 for i in range(r):
     nums = serie(4)
@@ -33,10 +33,8 @@ for i in range(r):
     if found_one == 0:
         tally['no'] += 1
 
-y = tally['yes']
-n = tally['no']
-tally['yes'] = y * 100 / (y + n)
-tally['no'] = n * 100 / (y + n)
+tally['yes'] = tally['yes'] * 100 / r
+tally['no'] = tally['no'] * 100 / r
 
 print(tally)
 plt.bar(tally.keys(), tally.values(), color='g')
