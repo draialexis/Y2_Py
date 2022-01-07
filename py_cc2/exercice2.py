@@ -4,6 +4,7 @@ import numpy as np
 ## 1)
 print('\n######1######\n')
 
+
 def birthdays(n):
     res = np.random.randint(0, 364, n)
     return res
@@ -14,7 +15,7 @@ def close_30(l):
     streaks = [0]
     close = 0
     for i in range(len(l) - 1):
-        if abs(l[i] - l[i+1])  <= 30:
+        if abs(l[i] - l[i + 1]) <= 30:
             close += 1
         else:
             if close > 0:
@@ -24,6 +25,7 @@ def close_30(l):
         streaks.append(close)
     return max(streaks)
 
+
 def evaluate_close(n, m):
     tries = 20000
     successes = 0
@@ -31,6 +33,7 @@ def evaluate_close(n, m):
         if close_30(birthdays(n)) >= m:
             successes += 1
     return (successes / tries) * 100
+
 
 print("prob =", round(evaluate_close(5, 4), 3), "%")
 
@@ -42,8 +45,9 @@ def avg_intvl(l):
     res = 0
     l = sorted(l)
     for i in range(len(l) - 1):
-        res += abs(l[i] - l[i+1])
+        res += abs(l[i] - l[i + 1])
     return res / len(l)
+
 
 def evaluate_intvl(n):
     iters = 20000
@@ -55,7 +59,6 @@ def evaluate_intvl(n):
 
 print("moyenne =", round(evaluate_intvl(5), 3), "jours")
 
-
 ## 3)
 print('\n######3######\n')
 
@@ -64,10 +67,11 @@ def max_intvl(l):
     res = abs(l[0] - l[1])
     l = sorted(l)
     for i in range(1, len(l) - 1):
-        candidate = abs(l[i] - l[i+1])
+        candidate = abs(l[i] - l[i + 1])
         if candidate > res:
             res = candidate
     return res
+
 
 def evaluate_max_intvl(n):
     iters = 20000
@@ -75,6 +79,7 @@ def evaluate_max_intvl(n):
     for _ in range(iters):
         res += avg_intvl(birthdays(n))
     return (res / iters)
+
 
 L = []
 
@@ -84,7 +89,6 @@ for i in range(20000):
 plt.hist(L, bins=12, edgecolor='black')
 plt.title("3) resultats sur 20 000 essais")
 plt.figure()
-
 
 ## 4)
 print('\n######4######\n')
@@ -113,17 +117,18 @@ def find_outcome_pair(size, f, n):
 
     return tally
 
+
 tally = find_outcome_pair(20000, birthdays, 30)
 
 print("prob =", round(tally["yes"]), "%")
 
-
 ## 5)
 print('\n######5######\n')
 
+
 def find_outcome_pair_intvl(size, f, n_a, n_b):
     res = []
-    for n in range(n_a, n_b+1):
+    for n in range(n_a, n_b + 1):
         tally = {'yes': 0, 'no': 0}
         for i in range(size):
             a = f(n)
@@ -140,6 +145,7 @@ def find_outcome_pair_intvl(size, f, n_a, n_b):
 
     return res
 
+
 x = np.linspace(20, 30, 11)
 y = find_outcome_pair_intvl(2000, birthdays, 20, 30)
 
@@ -148,10 +154,3 @@ plt.title("5) resultats en % sur 2000 essais chacun, pour des classes de 20 à 3
 plt.show()
 
 print("la prob sera entre 20/365 et 30/365, soit environ 5% à 8.5%...")
-
-
-
-
-
-
-

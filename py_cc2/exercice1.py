@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 n = 5
 
@@ -26,16 +26,18 @@ print('w =', w)
 print('\n######3######\n')
 
 A = np.zeros((w.size, w.size))
-A[0, :] = A[-1, :] = A[:, 0] = A [:, -1] = w
+A[0, :] = A[-1, :] = A[:, 0] = A[:, -1] = w
 print('A =\n', A)
 
 ## 4)
 print('\n######4######\n')
 
+
 def iteration(m):
-    for i in range(1, w.size-1):
-        for j in range(1, w.size-1):
-            m[i, j] = (m[i-1, j] + m[i+1, j] + m[i, j-1] + m[i, j+1]) / 4
+    for i in range(1, w.size - 1):
+        for j in range(1, w.size - 1):
+            m[i, j] = (m[i - 1, j] + m[i + 1, j] + m[i, j - 1] + m[i, j + 1]) / 4
+
 
 for _ in range(5):
     iteration(A)
@@ -65,7 +67,7 @@ v = np.linspace(b, a, n)
 w = np.hstack((u, v))
 
 A = np.zeros((w.size, w.size))
-A[0, :] = A[-1, :] = A[:, 0] = A [:, -1] = w
+A[0, :] = A[-1, :] = A[:, 0] = A[:, -1] = w
 
 for _ in range(5):
     iteration(A)
@@ -77,7 +79,6 @@ plt.show()
 for _ in range(1000):
     iteration(A)
 
-plt.matshow(A) # 10 ou 12 sec de temps d'execution (!)
+plt.matshow(A)  # 10 ou 12 sec de temps d'execution (!)
 plt.title("6) A, n=30, apres 1000 appels a iteration")
 plt.show()
-
